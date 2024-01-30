@@ -98,7 +98,13 @@ public class Solution {
             // atfist loop iterate then chexk every condition ***imoportant to remember
             temp1 = temp1.next;
             temp2 = temp2.next;
+
+
+// equalitv 2 bar er jnno,,,jdi ekste kono point indicate kore taholeo hba abr jdi eksthe 
+null e meet kore(means there is no collision point) thleo kaj korbe null e meet kore temp1 return kora mane null
+
             if(temp1 == temp2) return temp1;
+
 
             if(temp1 == null) temp1 = headB;
             if(temp2 == null) temp2 = headA;
