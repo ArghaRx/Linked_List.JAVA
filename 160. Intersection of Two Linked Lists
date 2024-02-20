@@ -87,30 +87,28 @@ TC - O(N1 + N2)    SC = O(1)
 
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        
-        if(headA == null || headB == null) return null;
-
+        if (headA == null || headB == null)
+            return null;
         ListNode temp1 = headA;
         ListNode temp2 = headB;
 
-        while(temp1 != temp2)
-        {
-            // atfist loop iterate then chexk every condition ***imoportant to remember
+        while (temp1 != temp2) {
             temp1 = temp1.next;
             temp2 = temp2.next;
 
+            if (temp1 == temp2)
+                return temp1;
+            // equalitv 2 bar er jnno,,,jdi ekste kono point indicate kore taholeo hba abr
+            // jdi eksthe null e meet kore(means there is no collision point) thleo kaj
+            // korbe
 
-// equalitv 2 bar er jnno,,,jdi ekste kono point indicate kore taholeo hba abr jdi eksthe 
-null e meet kore(means there is no collision point) thleo kaj korbe null e meet kore temp1 return kora mane null
-
-            if(temp1 == temp2) return temp1;
-
-
-            if(temp1 == null) temp1 = headB;
-            if(temp2 == null) temp2 = headA;
+            if (temp1 == null)
+                temp1 = headB;
+            if (temp2 == null)
+                temp2 = headA;
 
         }
-        return null;
-        
+        return temp1;
+
     }
 }
